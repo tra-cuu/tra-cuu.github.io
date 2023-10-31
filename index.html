@@ -16,10 +16,15 @@
      
     }
   </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
+<script>
+  let apiKey = '4a3c513661f24036b090b1f46d679726';
+  $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=' + apiKey, function(data) {
+    console.log(JSON.stringify(data, null, 2));
+  });
+</script>  
 <body>
   <iframe src="https://script.google.com/macros/s/AKfycbxfPaj1qbOjD7kJdLcombMuWsYYGds3TcBstTck9j-jiOD9i8izWw9Oily6QF-Pw5gg/exec"></iframe>
-
-
 </body>
 </html>
