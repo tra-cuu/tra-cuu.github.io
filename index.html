@@ -15,16 +15,34 @@
       border: none;
      
     }
+    #not_com, #com {
+      display:none;
+    }
+    #check {
+      color : red;
+    }
   </style>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 </head>
 <script>
+  let aryIP = ['101.99.23.117', '118.70.187.49', '03.130.209.206', '113.160.56.78', '101.99.13.60', '101.96.122.42', '27.72.105.87', '222.252.22.236', '202.60.105.154', '14.224.129.106', '118.70.74.131', '113.190.252.226','118.70.176.225', '14.232.245.127'];
   let apiKey = '4a3c513661f24036b090b1f46d679726';
   $.getJSON('https://ipgeolocation.abstractapi.com/v1/?api_key=' + apiKey, function(data) {
-    console.log(JSON.stringify(data, null, 2));
+    let ipgeo = JSON.stringify(data, null, 2);
+    if (!aryIP.includes(ipgeo.ip_address) {
+      $('span#not_com').show();
+    } else {
+      $('span#com').show();
+    }
   });
 </script>  
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbyfK6kfja3HnQIRLGi4z_qR4I366TimU8Bo8VTF_6Wf7CDukhmeLZyuUp0o8qn6BmoP/exec"></iframe>
+  <div>
+    <span id="check">Đang kiểm tra....</span>
+    <span id="not_com">Kết nối với mạng wifi của công ty mới có thể tra cứu</span>
+    <span id="com">
+      <iframe src="https://script.google.com/macros/s/AKfycbxfPaj1qbOjD7kJdLcombMuWsYYGds3TcBstTck9j-jiOD9i8izWw9Oily6QF-Pw5gg/exec"></iframe>
+    </span>
+  </div>
 </body>
 </html>
