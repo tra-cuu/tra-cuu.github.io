@@ -32,7 +32,21 @@
     <span id="check">Đang kiểm tra....</span>
     <span id="not_com">Kết nối với mạng wifi của công ty mới có thể tra cứu</span>
     <span id="com">
-      <iframe src="https://script.google.com/macros/s/AKfycbyfK6kfja3HnQIRLGi4z_qR4I366TimU8Bo8VTF_6Wf7CDukhmeLZyuUp0o8qn6BmoP/exec"></iframe>
+
+      
+    <iframe id="redirectFrame"></iframe>
+<script>
+
+  function redirectToLink() {
+    var encodedLink = "aHR0cHM6Ly9zY3JpcHQuZ29vZ2xlLmNvbS9tYWNyb3Mvcy9BS2Z5Y2J5Zks2a2ZqYTNIblFJUkxHaTR6X3FSNEkzNjZUaW1VOEJvOFZURl82V2Y3Q0R1a2htZUxaeXVVcDBvOHFuNkJtb1AvZXhlYw==";
+    var decodedLink = atob(encodedLink);
+    document.getElementById("redirectFrame").src = decodedLink;
+  }
+
+  redirectToLink();
+</script>
+  
+    
     </span>
   </div>
 </body>
